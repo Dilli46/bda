@@ -1,0 +1,16 @@
+hive> create database emp;
+hive> use emp;
+hive> create database emp1_details;
+hive> DESCRIBE emp1;
+hive> describe formatted emp1;
+hive> load data local inpath '/home/cloudera/Desktop/empdetails.txt' overwrite into table emp1;
+hive> select ename from emp1;
+hive> select * from emp1;
+hive> select count(1) from emp1;
+hive> select ename from emp1 where ename LIKE '_';
+hive> select ename from emp1 where ename LIKE 'h%';
+hive> select * from emp1 where ename LIKE 'h%';
+hive> show tables;
+hive> alter table emp1 rename to emp2;
+hive> select sum(empno) from emp2;
+

@@ -1,0 +1,7 @@
+grunt> input1 = LOAD '/home/cloudera/Desktop/pigword.txt' as (line:Chararray);
+grunt> Words = FOREACH input1 GENERATE FLATTEN(TOKENIZE(line,''))AS word;
+grunt> Grouped =GROUP Words BY word;
+grunt> wordcount = FOREACH Grouped GENERATE group, COUNT(Words);
+grunt> DUMP wordcount;
+
+
